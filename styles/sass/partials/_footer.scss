@@ -1,0 +1,14 @@
+@use "variables" as *;
+
+footer {
+  background-color: #FFFFFF;
+}
+
+.footerText {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  font-family: $bodyText;
+  font-size: 2.4rem;
+  color: #000000;
+}

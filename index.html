@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unwanted Roomates</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <div class="headerElementsContainer">
+        
+        <div class="mainTextContainer">
+          <h1>unwanted roommates
+            <span class="h1Span">
+              Know who is living with you, before you sign the lease
+            </span>
+          </h1>
+        </div>
+
+        <form action="#" method="post" name="addressSearch">
+          <label for="search">
+            <span class="sr-only">Search your address</span>
+          </label>
+
+          <div class="inputBar">
+            <input type="text" id="address" name="addressSearch" placeholder="Search your address" required>
+            <button class="linkBox" type="submit" value="submit">
+              <img src="./assets/image 1.png" alt="#" aria-hidden="true">
+              <span class="sr-only">search</span>        
+            </button>
+          </div>
+      
+        </form>
+      </div><!-- headerElementsContainer div end -->
+    </div> <!-- header div wrapper end -->
+  </header>
+
+  <main>
+    <section class="results">
+      <div class="wrapper">
+        <ul class="inspectionResults">
+          <!-- dynamic results here -->
+        </ul>
+      </div><!-- results wrapper div end -->
+    </section>  
+
+    <section class="extraInfo">
+      <div class="wrapper">
+
+        <h2>have a rat problem? check out these resources</h2>
+        <div class="accordion">
+          <div class="accordionItem">
+            <div class="accordionItemHeader">
+              <h3>I've found rats in my home, what do I do?</h3>
+            </div>
+            <div class="accordionItemBody">
+              <div class="accordionContent">
+                <p>Landlords in New York City are legallly required to address rat infestations in their properties as sooon as they are reported. If your landlord is refusing to do anything about a rat problem, the city encourages you to report the matter through 311, either <a href="https://portal.311.nyc.gov/" target="_blank">online</a> or by calling 3-1-1. Inspectors from the city's Health Department will then conduct an inspection. If rats are found, your landlord will be ordered to address the issue within a minimum of five days. Landlords that fail to comply can face steep fines, and may be billed directly for abatement services conducted by the city on their behalf. More information on what happens after you file a complaint can be found <a href="https://www1.nyc.gov/assets/doh/downloads/pdf/rats/2021/what-happens-to-your-rat-complaint.pdf" target="_blank"></a>here</a>. 
+              </p>
+              </div><!--accordionContent div end -->
+            </div> <!--accordionitembody div end-->
+          </div><!--accordionItem div end-->
+        </div><!--accordion div end-->
+        
+          <div class="accordion">
+            <div class="accordionItem">
+              <div class="accordionItemHeader">
+                <h3>Do landlords have to clean up rat problems I report to them?</h3>
+              </div>
+              <div class="accordionItemBody">
+                <div class="accordionContent">
+                  <p>Yes! Landlords in New York city are required <a href="https://www1.nyc.gov/assets/doh/downloads/pdf/about/healthcode/health-code-article151.pdf" target="_blank">by law</a> to keep their properties rat free and to immediately address conditions that may lead to rat infestations.</p>
+                </div><!--accordionContent div end -->
+              </div> <!--accordionitembody div end-->
+            </div><!--accordionItem div end-->
+          </div><!--accordion div end-->
+
+          <div class="accordion">
+            <div class="accordionItem">
+              <div class="accordionItemHeader">
+                <h3>How do I prevent prevent rat infestations?</h3>
+              </div>
+              <div class="accordionItemBody">
+                <div class="accordionContent">
+                  <p>Rats thrive where garbage is easily accessible to them. You can reduce the likelihood of a rat infestation by ensuring all garbage cans have tight-fitting lids, and by bringing garbage to the curb as close to pick up time as possible. Garbage left on the curb for too long attracts rats. For apartment residents, make sure to tie your garbage bags securely before throwing them down the garbage chute. 
+
+                  Keep both indoor and outdoor environments free of cllutter and litter that can provide rats with  shelter. Remove piles of newspapers, paper bags, carboard and bottles that may be piling up, and keep weeds and shrubs around your home under control. 
+
+                  A full guide to preventing rat infestations can be found <a href="https://www1.nyc.gov/assets/doh/downloads/pdf/pest/rodent_control.pdf" target="_blank">here.</a>     
+                  </p>
+                </div><!--accordionContent div end -->
+              </div> <!--accordionitembody div end-->
+            </div><!--accordionItem div end-->
+          </div><!--accordion div end-->
+        </div><!--FAQ wrapper div end-->
+    </section>
+  </main>
+</body>
+<script src="script.js"></script>
+
+<footer>
+  <p class="footerText">
+    Powered by New York City Open Data API
+  </p>
+</footer>
+</html>

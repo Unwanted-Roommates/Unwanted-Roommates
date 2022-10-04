@@ -1,0 +1,81 @@
+@use "variables" as *;
+
+.results {
+  height: 500px; //placeholder height
+  border-top: #000000 2px solid;
+  border-bottom: #000000 2px solid;
+}
+
+h2 {
+    font-family: $header;
+    font-size: 5rem;
+    color: #C72E2E;
+    text-transform: uppercase;
+    line-height: 5.875rem;
+    letter-spacing: 0.175rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+h3 {
+  font-family: $bodyText;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+//FAQ ACCORDION 
+
+.accordion {
+  border-bottom: 2px solid white;
+}
+
+.accordionItemHeader {
+  cursor: pointer;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #161515;
+  font-size: 2.4rem;
+  font-family: $bodyText;
+  padding: 10px;
+}
+
+
+.accordionItemHeader::after, .accordionItemHeader.active::after {
+  font-size: 3.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%; 
+  padding: 0 10px;
+}
+
+.accordionItemHeader::after {
+  content: "\002B";
+}
+
+.accordionItemHeader.active::after {
+  content: "\002D";   
+}
+
+.accordionContent {
+  padding: 10px;
+  color: black;
+  font-size: 2.4rem;
+  border: 2px solid black;
+  font-family: $bodyText;
+}
+
+.accordionItemBody {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 0.5s ease-out;
+}
