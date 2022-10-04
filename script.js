@@ -1,17 +1,36 @@
 
-const baseURL = "https://data.cityofnewyork.us/resource/p937-wjvj.json";
-const url = new URL(baseURL);
+const app = {
+}
 
-url.search = new URLSearchParams ({
-  "$$app_token": "ZLv4DuWOXJMDJjtoemNuEtwro"
-});
+app.token = "ZLv4DuWOXJMDJjtoemNuEtwro";
 
-fetch(url)
-.then ((response)=> {
-  return response.json();
-}).then ((data) =>{
-  console.log(data)
-})
+app.getRecords = () => {
+  const url = new URL ("https://data.cityofnewyork.us/resource/p937-wjvj.json");
+  url.search = new URLSearchParams({
+    "$$app_token": app.token,
+  });
+
+
+  //shorthand for fetch. then then 
+  fetch(url)
+    .then(result => result.json())
+    .then(data => console.log(data))
+};
+
+app.init = () => {
+  app.getRecords();
+};
+
+app.init();
+
+
+
+
+
+
+
+
+
 
 //ACCORDION
 
