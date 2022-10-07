@@ -332,13 +332,24 @@ form input::placeholder {
   position: relative;
   height: 500px;
   width: 100%;
-  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) contrast(1.8) brightness(0.6);
+  mix-blend-mode: multiply;
+  position: relative;
 }
 
 .ratFacts {
   color: white;
   z-index: 2;
-  font-size: 5rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -349,16 +360,8 @@ form input::placeholder {
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 20%;
-}
-
-.carousel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: grayscale(1) contrast(1.8) brightness(0.6);
-  mix-blend-mode: multiply;
-  position: relative;
+  font-family: "AverageSans";
+  font-size: 4rem;
 }
 
 .trackContainer {
