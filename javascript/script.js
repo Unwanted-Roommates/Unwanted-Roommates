@@ -13,60 +13,54 @@ app.getRecords = function() {
   url.search = new URLSearchParams({
     "$$app_token": app.token,
     "$limit": 1,
-    house_number: "255",
-    street_name: '',
-    borough: ''
+    "house_number": 20,
+    "street_name": "LOCUST STREET",
+    "borough": 'Brooklyn'
   });
 
    
-  
     //shorthand for fetch. then then 
   fetch(url).then((rodent) =>{
     return rodent.json();
   })
   .then((jsonData) =>{
     document.querySelector('.inspectionResults').innerHTML = '';
-    // app.displayResults(jsonData);
-
-  console.log(jsonData)
+    app.displayResults(jsonData);
+    console.log(jsonData)
   })
 };
 
 // For each object within the array show selected results and append to li then append all to 
-app.displayResults = function([]) {
-  [].forEach((Object) =>{
+app.displayResults = (arrayOfObjects) => {
+  arrayOfObjects.forEach((Object) =>{
     
-    const number = document.createElement("li");
+    const resultContainer = document.createElement("div")
+    resultContainer.classList.add('resultContainer');
+    
+    const number = document.createElement("p");
     number.innerText = Object.house_number
 
-    const address = document.createElement("li");
+    const address = document.createElement("p");
     address.innerText = Object.street_name;
 
-    const zipCode = document.createElement("li");
+    const zipCode = document.createElement("p");
     zipCode.innerText = Object.zip_code;
 
-    const date = document.createElement("li");
+    const date = document.createElement("p");
     date.innerText = Object.inspection_date;
-
-    const initial = document.createElement("li");
+    
+    const initial = document.createElement("p");
     initial.innerText = Object.inspection_type;
-
-    const iResult = document.createElement("li");
+    
+    const iResult = document.createElement("p");
     iResult.innerText = Object.result;
+    
+    document.querySelector('.inspectionResults').append(number, address, zipCode, date, initial, iResult);
 
-    const resultContainer = document.createElement("ul")
-    resultContainer.classList.add('resultContainer');
-
-    resultContainer.append(number, address, zipCode, date, initial, iResult);
-
-    document.querySelector('.inspectionResults').appendChild('.resultContainer');
-
+    console.log(address)
+ 
   })
 }
-``
-
-
-
 
 app.events = () => { 
  // Add eventListener on submit when user input address
@@ -104,4 +98,3 @@ app.init();
 
 
 //ACCORDION
-

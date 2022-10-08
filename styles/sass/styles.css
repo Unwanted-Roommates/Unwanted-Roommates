@@ -1,0 +1,570 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  max-width: 1700px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/****************************************/
+/*GENERAL STYLES SHARED ACROSS ALL PAGES*/
+/****************************************/
+@font-face {
+  font-family: "NotoSansJP";
+  src: url("/fonts/Noto_Sans_JP/NotoSansJP-Regular.otf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "AverageSans";
+  src: url("/fonts/AverageSans/AverageSans-Regular.ttf");
+  font-weight: normal;
+}
+header {
+  height: 600px;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(0, 0, 0, 0.5) 100%), url(./assets/new_york_empire_state_building_cityscape.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  position: relative;
+}
+
+.headerElementsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainTextContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+h1 {
+  font-family: "NotoSansJP";
+  font-size: 6.4rem;
+  color: #C72E2E;
+  text-transform: uppercase;
+  line-height: 5.875rem;
+  letter-spacing: 0.175rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.h1Span {
+  font-family: "NotoSansJP";
+  font-size: 1.6rem;
+  color: #000000;
+  font-weight: normal;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  line-height: 2.3rem;
+  letter-spacing: 0.175rem;
+  margin: 15px 0;
+}
+
+input {
+  height: 7.3rem;
+  font-size: 2.4rem;
+  padding: 0 10px;
+  font-family: "AverageSans";
+}
+
+form {
+  width: 60%;
+}
+
+#houseNumber {
+  width: 10%;
+}
+
+#streetName {
+  width: 80%;
+}
+
+#borough {
+  width: 20%;
+}
+
+form input::-moz-placeholder {
+  font-size: 2.4rem;
+  font-family: "AverageSans";
+}
+
+form input:-ms-input-placeholder {
+  font-size: 2.4rem;
+  font-family: "AverageSans";
+}
+
+form input::placeholder, select, option {
+  font-size: 2.4rem;
+  font-family: "AverageSans";
+}
+
+.inputBar {
+  display: flex;
+  justify-content: center;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.submit {
+  cursor: pointer;
+}
+
+.carousel {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  filter: grayscale(1) contrast(1.8) brightness(0.6);
+  mix-blend-mode: multiply;
+  position: relative;
+}
+
+.ratFacts {
+  color: white;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20%;
+  font-family: "AverageSans";
+  font-size: 4rem;
+}
+
+.trackContainer {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 0.5s ease-in;
+}
+
+.carouselSlide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.buttonContainer {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.carouselButtonLeft, .carouselButtonRight {
+  display: flex;
+  font-size: 8rem;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.795);
+  cursor: pointer;
+  z-index: 3;
+  width: 50%;
+  position: absolute;
+}
+
+.carouselButtonLeft {
+  left: 0;
+  transform: rotate(180deg);
+  justify-content: right;
+}
+
+.carouselButtonRight {
+  right: 0;
+  justify-content: right;
+}
+
+.carouselNav {
+  background: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carouselIndicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: black;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.carouselIndicator.currentSlide {
+  background: rgba(99, 98, 98, 0.75);
+}
+
+.isHidden {
+  display: none;
+}
+
+.results {
+  height: 500px;
+  border-top: #000000 2px solid;
+  border-bottom: #000000 2px solid;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+h2 {
+  font-family: "NotoSansJP";
+  font-size: 5rem;
+  color: #C72E2E;
+  text-transform: uppercase;
+  line-height: 5.875rem;
+  letter-spacing: 0.175rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+h3 {
+  font-family: "AverageSans";
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.accordion {
+  border-bottom: 2px solid white;
+}
+
+.accordionItemHeader {
+  cursor: pointer;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: #161515;
+  font-size: 2.4rem;
+  font-family: "AverageSans";
+  padding: 10px;
+}
+
+.accordionItemHeader::after, .accordionItemHeader.active::after {
+  font-size: 3.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+}
+
+.accordionItemHeader::after {
+  content: "+";
+}
+
+.accordionItemHeader.active::after {
+  content: "-";
+}
+
+.accordionContent {
+  padding: 10px;
+  color: black;
+  font-size: 2.4rem;
+  border: 2px solid black;
+  font-family: "AverageSans";
+}
+
+.accordionItemBody {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 0.5s ease-out;
+}
+
+footer {
+  background-color: #FFFFFF;
+}
+
+.footerText {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  font-family: "AverageSans";
+  font-size: 2.4rem;
+  color: #000000;
+}/*# sourceMappingURL=styles.css.map */
