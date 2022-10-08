@@ -21,18 +21,36 @@
         </div>
 
         <form action="#" method="post" name="addressSearch">
-          <label for="search">
-            <span class="sr-only">Search your address</span>
-          </label>
-
+                
           <div class="inputBar">
-            <input type="text" id="address" name="addressSearch" placeholder="Search your address" required>
-            <button class="linkBox" type="submit" value="submit">
-              <img src="./assets/image 1.png" alt="#" aria-hidden="true">
-              <span class="sr-only">search</span>        
-            </button>
+            <label for="houseNumber">
+              <span class="sr-only">Enter street number</span>
+            </label>
+            <input type="text" id="houseNumber" name="addressSearch" placeholder="#" required>
+
+            <label for="street">
+              <span class="sr-only">Enter street name (i.e. 20 Hart Street)</span>
+            </label>  
+            <input type="text" id="streetName" name="addressSearch" placeholder="Enter street name (i.e. 20 hart street)" required>
+
+            <label for="selectBorough">
+              <span class="sr-only">Enter street name (i.e. 20 Hart Street)</span>
+            </label>
+              <select id="borough" name="addressSearch" required>
+                <option value disabled selected>Select borough</option>
+                <option value="manhattan">Manhattan</option>
+                <option value="queens">Queens</option>
+                <option value="bronx">Bronx</option>
+                <option value="brooklyn">Brooklyn</option>
+                <option value="statenIsland">Staten Island</option>
+              </select>
+              
+              <button class="submit" type="submit" value="submit">
+                <img src="./assets/image 1.png" alt="#" aria-hidden="true">
+                <span class="sr-only">search</span>        
+              </button>
+
           </div>
-      
         </form>
       </div><!-- headerElementsContainer div end -->
     </div> <!-- header div wrapper end -->

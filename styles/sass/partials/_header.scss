@@ -54,14 +54,30 @@ h1 {
 }
 
 input {
-  width: 640px;
+
   height: 7.3rem;
   font-size: 2.4rem;
   padding: 0 10px;
   font-family: $bodyText;
 }
 
-form input::placeholder {
+form  {
+  width: 60%;
+}
+
+#houseNumber {
+  width: 10%;
+}
+
+#streetName {
+  width: 80%;
+}
+
+#borough {
+  width: 20%;  
+}
+
+form input::placeholder, select, option {
   font-size: 2.4rem;
   font-family: $bodyText;
 }
@@ -72,4 +88,9 @@ form input::placeholder {
   border: 2px solid #000000;
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
+}
+
+.submit {
+  cursor: pointer;
 }
