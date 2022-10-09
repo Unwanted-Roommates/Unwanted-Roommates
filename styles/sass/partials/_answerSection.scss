@@ -1,12 +1,11 @@
 @use "variables" as *;
 
 .results {
-  height: 500px; //placeholder height
+  height: auto; //placeholder height
   border-top: #000000 2px solid;
   border-bottom: #000000 2px solid;
   font-size: 2.4rem;
   text-align: center;
-
 }
 
 // div.inspectionResults {
@@ -31,6 +30,30 @@ h3 {
   font-family: $bodyText;
   font-size: 2.4rem;
   text-transform: uppercase;
+}
+
+
+.resultContainer {
+  margin: 50px auto;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.labels {
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+}
+
+.information {
+  border: 2px solid green;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
 }
 
 //FAQ ACCORDION 

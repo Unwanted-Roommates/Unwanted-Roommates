@@ -254,6 +254,11 @@ html {
   src: url("/fonts/AverageSans/AverageSans-Regular.ttf");
   font-weight: normal;
 }
+.special {
+  color: red;
+  font-size: 5rem;
+}
+
 header {
   height: 600px;
   width: 100%;
@@ -464,9 +469,11 @@ form input::placeholder, select, option {
 }
 
 .results {
-  height: 500px;
+  height: auto;
   border-top: #000000 2px solid;
   border-bottom: #000000 2px solid;
+  font-size: 2.4rem;
+  text-align: center;
 }
 
 h2 {
@@ -487,6 +494,29 @@ h3 {
   font-family: "AverageSans";
   font-size: 2.4rem;
   text-transform: uppercase;
+}
+
+.resultContainer {
+  margin: 50px auto;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.labels {
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.information {
+  border: 2px solid green;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .accordion {

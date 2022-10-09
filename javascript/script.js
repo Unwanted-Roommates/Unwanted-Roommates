@@ -6,68 +6,102 @@ app.token = "ZLv4DuWOXJMDJjtoemNuEtwro"
 app.url = "https://data.cityofnewyork.us/resource/p937-wjvj.json"
 
 
-app.getRecords = function() {
+app.getRecords = (house, street, borough)=> {
   
   const url = new URL (app.url);
  
   url.search = new URLSearchParams({
     "$$app_token": app.token,
-    "$limit": 1,
-    "house_number": 20,
-    "street_name": "LOCUST STREET",
-    "borough": 'Brooklyn'
+    "$limit": 5,
+    "house_number": house,
+    "street_name": street,
+    "borough": borough
   });
 
-   
-    //shorthand for fetch. then then 
   fetch(url).then((rodent) =>{
-    return rodent.json();
+
+    if (rodent.ok) {
+      return rodent.json();
+    } else {
+      throw new Error("There was an unexpected problem with the API. Please try again later.")
+    }
   })
   .then((jsonData) =>{
+    // if (jsonData.length === 0) {
+
+    //   console.log("error")
+    // } else {
     document.querySelector('.inspectionResults').innerHTML = '';
     app.displayResults(jsonData);
-    console.log(jsonData)
+    // }
   })
+  // .catch((error)=> {
+  // console.log("error")
+  // });
 };
 
-// For each object within the array show selected results and append to li then append all to 
 app.displayResults = (arrayOfObjects) => {
-  arrayOfObjects.forEach((Object) =>{
-    
-    const resultContainer = document.createElement("div")
+  arrayOfObjects.forEach((obj) =>{
+    const number = obj.house_number;
+    const address = obj.street_name;
+    const zipCode = obj.zip_code;
+    const borough = obj.borough;
+    const date = obj.inspection_date;
+    const initial = obj.inspection_type;
+    const iResult = obj.result;
+  
+    const resultContainer = document.createElement("div");
     resultContainer.classList.add('resultContainer');
     
-    const number = document.createElement("p");
-    number.innerText = Object.house_number
-
-    const address = document.createElement("p");
-    address.innerText = Object.street_name;
-
-    const zipCode = document.createElement("p");
-    zipCode.innerText = Object.zip_code;
-
-    const date = document.createElement("p");
-    date.innerText = Object.inspection_date;
+    const innerHTML = `
+    <div class = "labels">
+    <p class = "recordDetails"> ADDRESS:</p>
+    <p class = "recordDetails"> BOROUGH:</p>
+    <p class = "recordDetails"> ZIP CODE:</p>
+    <p class = "recordDetails"> INSPECTION DATE:</p>
+    <p class = "recordDetails"> INSPECTION TYPE:</p>
+    <p class = "recordDetails"> RESULT:</p>
     
-    const initial = document.createElement("p");
-    initial.innerText = Object.inspection_type;
-    
-    const iResult = document.createElement("p");
-    iResult.innerText = Object.result;
-    
-    document.querySelector('.inspectionResults').append(number, address, zipCode, date, initial, iResult);
+    </div>
+  `
+    const innerHTML2 = `
+    <div class ="information">
+      <p class = "recordDetails"> ${number} ${address}</p>
+      <p class = "recordDetails"> ${borough}</p>
+      <p class = "recordDetails"> ${zipCode}</p>
+      <p class = "recordDetails"> ${date}</p>
+      <p class = "recordDetails"> ${initial}</p>
+      <p class = "recordDetails"> ${iResult}</p>
+    </div>
+  `
+    const record = document.createElement("div");
+    record.classList.add('record');
+    record.innerHTML = `${innerHTML}`
 
-    console.log(address)
- 
+    const details = document.createElement("div");
+    details.classList.add("details");
+    details.innerHTML = `${innerHTML2}`
+    
+    resultContainer.append(record, details); 
+
+
+    document.querySelector('.inspectionResults').append(resultContainer); 
   })
 }
 
 app.events = () => { 
- // Add eventListener on submit when user input address
-  document.querySelector("form").addEventListener('submit', function(e){
-    const userChoice = e.target.value;
-    app.getRecords(userChoice);
-    e.preventDefault();
+
+//FORM 
+  document.querySelector("form").addEventListener('submit', function(event){
+    event.preventDefault();
+
+    // document.querySelector(".resultsContainer").classList.remove();
+
+    const house =  document.querySelector("#houseNumber").value;
+    const street = document.querySelector("#streetName").value.toUpperCase();
+    const borough = document.querySelector("#borough").value;
+
+  app.getRecords(house, street, borough)
   });
 };
  
@@ -75,7 +109,7 @@ app.events = () => {
   app.accordionItemHeader = document.querySelectorAll(".accordionItemHeader");
   app.accordionItemHeader.forEach(header => {
     
-    header.addEventListener("click", event => {
+    header.addEventListener("click", (event) => {
       header.classList.toggle("active");
     
       const accordionItemBody = header.nextElementSibling;
@@ -96,5 +130,3 @@ app.init = () => {
 
 app.init();
 
-
-//ACCORDION
