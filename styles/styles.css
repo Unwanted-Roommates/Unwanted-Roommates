@@ -245,6 +245,10 @@ p {
   font-family: "AverageSans";
 }
 
+a {
+  color: blue;
+}
+
 @font-face {
   font-family: "NotoSansJP";
   src: url("/fonts/Noto_Sans_JP/NotoSansJP-Regular.otf");
@@ -281,6 +285,17 @@ p {
     width: 100%;
     text-align: center;
   }
+  .submit img {
+    display: none;
+  }
+  .search {
+    display: flex !important;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
   h1 {
     font-size: 5rem !important;
   }
@@ -300,6 +315,7 @@ p {
   }
   input {
     font-size: 2rem !important;
+    padding: 0 5px !important;
   }
   h1 {
     font-size: 3.5rem !important;
@@ -387,6 +403,12 @@ p {
     font-size: 1rem !important;
     line-height: 1.5rem !important;
     padding: 0 20px !important;
+  }
+  #houseNumber {
+    width: 30% !important;
+  }
+  #streetName {
+    width: 70% !important;
   }
   .recordDetails {
     font-size: 1rem !important;
@@ -516,6 +538,10 @@ form input::placeholder, select, option {
 .submit {
   cursor: pointer;
   width: auto;
+}
+
+.search {
+  display: none;
 }
 
 .carousel {
@@ -691,7 +717,9 @@ h2 {
   padding: 25px 0;
   font-size: 3rem;
   animation: change 0.8s ease;
-  margin-right: 75px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 @keyframes change {

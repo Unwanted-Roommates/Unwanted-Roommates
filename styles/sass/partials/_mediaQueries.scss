@@ -33,8 +33,21 @@
     justify-content: center;
     width: 100%;
     text-align: center;
+
+    img {
+      display: none;
+    }
   }
 
+  .search {
+    display: flex !important;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
   h1 {
     font-size: 5rem !important; 
   }
@@ -60,6 +73,7 @@
 
   input {
     font-size: 2rem !important;
+    padding: 0 5px !important;
   }
 
   h1 {
@@ -171,6 +185,14 @@
     font-size:  1rem !important;
     line-height: 1.5rem !important;
     padding: 0 20px !important; 
+  }
+
+  #houseNumber {
+    width: 30%  !important;
+  }
+  
+  #streetName {
+    width: 70% !important;
   }
 
   .recordDetails {

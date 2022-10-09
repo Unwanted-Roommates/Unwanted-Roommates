@@ -56,7 +56,9 @@ h2 {
   padding: 25px 0;
   font-size: 3rem;
   animation: change 0.8s ease;
-  margin-right: 75px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 @keyframes change {
