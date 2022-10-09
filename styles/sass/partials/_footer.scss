@@ -1,4 +1,4 @@
-@use "variables" as *;
+@use "./variables" as *;
 
 footer {
   background-color: #FFFFFF;
@@ -9,6 +9,7 @@ footer {
   justify-content: center;
   padding: 20px 0;
   font-family: $bodyText;
-  font-size: 2.4rem;
+  font-size: 2rem !important; //SASS would not allow changing of this property otherwise 
+  text-align: center; 
   color: #000000;
 }

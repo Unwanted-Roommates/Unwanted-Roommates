@@ -1,9 +1,9 @@
-@use "variables" as *;
+@use "./variables" as *;
 
 header {
   height: 600px; 
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(0, 0, 0, 0.5) 100%), url(/assets/new_york_empire_state_building_cityscape.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.15) 50%, rgba(0, 0, 0, 0.9) 100%), url(/assets/new_york_empire_state_building_cityscape.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 40%;
@@ -53,8 +53,23 @@ h1 {
   margin: 15px 0;
 }
 
-input {
+.explained {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
 
+.aboutApp { 
+  font-size: 3.5rem; 
+  color: #ffffff;
+  text-align: center;
+  line-height: 3.5rem;
+  text-shadow: -1px -1px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000;
+  margin-bottom: 50px;
+}
+
+input {
   height: 7.3rem;
   font-size: 2.4rem;
   padding: 0 10px;
@@ -65,8 +80,13 @@ form  {
   width: 60%;
 }
 
+.addressEntry{
+  display: flex;
+  flex: 1 1 75%; 
+}
+
 #houseNumber {
-  width: 10%;
+  width: 20%;
 }
 
 #streetName {
@@ -74,12 +94,13 @@ form  {
 }
 
 #borough {
-  width: 20%;  
+  flex: 1 4 25%; 
 }
 
 form input::placeholder, select, option {
   font-size: 2.4rem;
-  font-family: $bodyText;
+  font-family: $bodyText, Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
 }
 
 .inputBar {
@@ -93,4 +114,7 @@ form input::placeholder, select, option {
 
 .submit {
   cursor: pointer;
+  width: auto;
 }
+
+

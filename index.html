@@ -23,21 +23,24 @@
         <form action="#" method="post" name="addressSearch">
                 
           <div class="inputBar">
-            <label for="houseNumber">
-              <span class="sr-only">Enter street number</span>
-            </label>
-            <input type="text" id="houseNumber" name="addressSearch" placeholder="#" required>
 
-            <label for="street">
-              <span class="sr-only">Enter street name (i.e. 20 Locust Street, Brooklyn)</span>
-            </label>  
-            <input type="text" id="streetName" name="addressSearch" placeholder="Enter street name (i.e. Hart Street)" required>
+            <div class="addressEntry">
+              <label for="houseNumber">
+                <span class="sr-only">Enter street number</span>
+              </label>
+              <input type="text" id="houseNumber" name="addressSearch" placeholder="#" required>
+
+              <label for="street">
+                <span class="sr-only">Enter street name (i.e. 20 Locust Street, Brooklyn)</span>
+              </label>  
+              <input type="text" id="streetName" name="addressSearch" placeholder="Street (i.e. Locust Street)" required>
+            </div><!--address entry div end-->
 
             <label for="selectBorough">
               <span class="sr-only">Enter street name (i.e. 20 Locust Street, Brooklyn)</span>
             </label>
-              <select id="borough" name="addressSearch" required>
-                <option value disabled selected>Select Borough</option>
+              <select id="borough" class="annoying" name="addressSearch" required>
+                <option value disabled selected>Borough</option>
                 <option value="Manhattan">Manhattan</option>
                 <option value="Queens">Queens</option>
                 <option value="Bronx">Bronx</option>
@@ -51,11 +54,22 @@
               </button>
           </div>
         </form>
+
+        <div class="explained">
+          <div class="wrapper">
+            <p class="aboutApp">Simply enter the property number, street name and borough of anaddress in the input fields above to see the latest rat inspection results for that property, if available.</p>
+          </div>
+        </div>
       </div><!-- headerElementsContainer div end -->
     </div> <!-- header div wrapper end -->
   </header>
 
   <main>
+    <section class="about">
+      <div class="wrapper">
+       
+      </div>
+    </section>
     <section class="results">
       <div class="wrapper">
           <div class="inspectionResults">
@@ -104,7 +118,20 @@
     </section>
     <section class="extraInfo">
       <div class="wrapper">
-        <h2>have a rat problem? check out these resources</h2>
+        <h2>FAQS</h2>
+        <div class="accordion">
+          <div class="accordionItem">
+            <div class="accordionItemHeader">
+              <h3>How does this app work?</h3>
+            </div>
+            <div class="accordionItemBody">
+              <div class="accordionContent">
+                <p>This app pulls rodent inspection information from the City of New York's <a href="https://opendata.cityofnewyork.us/" target="_blank">open data portal.</a> Because some properties have had hundreds of inspections over the years, this app is configured to display only the latest five inspection results logged by the city.</p>
+              </div><!--accordionContent div end -->
+            </div> <!--accordionitembody div end-->
+          </div><!--accordionItem div end-->
+        </div><!--accordion div end-->
+
         <div class="accordion">
           <div class="accordionItem">
             <div class="accordionItemHeader">
@@ -122,7 +149,7 @@
           <div class="accordion">
             <div class="accordionItem">
               <div class="accordionItemHeader">
-                <h3>Do landlords have to clean up rat problems I report to them?</h3>
+                <h3>Do landlords have to clean up rat problems?</h3>
               </div>
               <div class="accordionItemBody">
                 <div class="accordionContent">
@@ -149,12 +176,26 @@
               </div> <!--accordionitembody div end-->
             </div><!--accordionItem div end-->
           </div><!--accordion div end-->
+
+          <div class="accordion">
+            <div class="accordionItem">
+              <div class="accordionItemHeader">
+                <h3>Where can I get a cat? </h3>
+              </div>
+              <div class="accordionItemBody">
+                <div class="accordionContent">
+                  <p>Check out the <a href="https://www1.nyc.gov/assets/doh/downloads/pdf/about/healthcode/health-code-article151.pdf" target="_blank">ASPCA's New York City branch</a> to find a feline friend that will take care of your mouse problem!</p>
+                </div><!--accordionContent div end -->
+              </div> <!--accordionitembody div end-->
+            </div><!--accordionItem div end-->
+          </div><!--accordion div end-->
         </div><!--FAQ wrapper div end-->
     </section>
   </main>
 </body>
 <script src="./javascript/script.js"></script>
 <script src="./javascript/carousel.js"></script>
+<script src="./javascript/accordion.js"></script>
 <footer>
   <p class="footerText">
     Powered by New York City Open Data API

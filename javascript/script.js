@@ -38,7 +38,9 @@ app.getRecords = (house, street, borough)=> {
       noResults.innerHTML =
         `<p class="noRecords"> No records found. You're probably safe.</p>`
 
-      const append = () => document.querySelector(".inspectionResults").append(noResults);
+      const append = () => {
+        document.querySelector(".inspectionResults").append(noResults);
+      }
 
       setTimeout(() => {
         append();
@@ -63,11 +65,10 @@ app.displayResults = (arrayOfObjects) => {
     const date = obj.inspection_date;
     const initial = obj.inspection_type;
     const iResult = obj.result;
-  
+    
     const resultContainer = document.createElement("div");
     resultContainer.classList.add('resultContainer');
     
-   
     const record = document.createElement("div");
     record.classList.add('record');
     record.innerHTML = `
@@ -92,10 +93,12 @@ app.displayResults = (arrayOfObjects) => {
       <p class = "recordDetails"> ${initial}</p>
       <p class = "recordDetails"> ${iResult}</p>
     </div>`
-    
-    resultContainer.append(record, details); 
-
-    const append = () => document.querySelector('.inspectionResults').append(resultContainer); 
+  
+      resultContainer.append(record, details); 
+  
+    const append = () => {
+      document.querySelector('.inspectionResults').append(resultContainer); 
+    }
 
     setTimeout(() => {
       append();
@@ -119,24 +122,6 @@ app.events = () => {
   });
 };
  
- //ACCORDION MENU
-  app.accordionItemHeader = document.querySelectorAll(".accordionItemHeader");
-  app.accordionItemHeader.forEach(header => {
-    
-    header.addEventListener("click", (event) => {
-      header.classList.toggle("active");
-    
-      const accordionItemBody = header.nextElementSibling;
-
-      if (header.classList.contains("active")) {    
-        accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";  
-      } else {
-        accordionItemBody.style.maxHeight = 0;
-      }
-    });
-  });
-
-
 app.init = () => {
   app.events();
 };
