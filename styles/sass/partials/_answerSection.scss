@@ -8,10 +8,6 @@
   text-align: center;
 }
 
-// div.inspectionResults {
-//   font-size: 2.4rem;
-// }
-
 h2 {
     font-family: $header;
     font-size: 5rem;
@@ -32,80 +28,46 @@ h3 {
   text-transform: uppercase;
 }
 
-
 .resultContainer {
-  margin: 50px auto;
-  border: 2px solid red;
+  margin: 10px auto;
   display: flex;
   justify-content: center;
   width: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-.labels {
-  border: 2px solid blue;
+
+.labels, .information {
   display: flex;
   flex-direction: column; 
   width: 100%;
 }
 
+.labels {
+  text-align: right;
+  padding-right: 10px;
+}
+
 .information {
-  border: 2px solid green;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  width: 100%; 
+  text-align: left;
+  padding-left: 10px;
 }
 
-//FAQ ACCORDION 
-
-.accordion {
-  border-bottom: 2px solid white;
-}
-
-.accordionItemHeader {
-  cursor: pointer;
-  position: relative;
-  color: white;
-  display: flex;
-  align-items: center;
-  background-color: #161515;
-  font-size: 2.4rem;
-  font-family: $bodyText;
-  padding: 10px;
-}
-
-
-.accordionItemHeader::after, .accordionItemHeader.active::after {
-  font-size: 3.5rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%; 
-  padding: 0 10px;
-}
-
-.accordionItemHeader::after {
-  content: "\002B";
-}
-
-.accordionItemHeader.active::after {
-  content: "\002D";   
-}
-
-.accordionContent {
-  padding: 10px;
-  color: black;
-  font-size: 2.4rem;
-  border: 2px solid black;
+.recordDetails {
   font-family: $bodyText;
 }
 
-.accordionItemBody {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0;
-  transition: max-height 0.5s ease-out;
+.noRecords {
+  font-family: $bodyText;
+  padding: 25px 0;
+  font-size: 3rem;
+  animation: change 0.8s ease;
+  margin-right: 75px;
+}
+
+@keyframes change {
+  0% {opacity: 0;}
+  50% {opacity: 0.5;}
+  100% {opacity: 1;}
 }

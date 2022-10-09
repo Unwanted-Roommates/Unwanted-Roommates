@@ -254,11 +254,6 @@ html {
   src: url("/fonts/AverageSans/AverageSans-Regular.ttf");
   font-weight: normal;
 }
-.special {
-  color: red;
-  font-size: 5rem;
-}
-
 header {
   height: 600px;
   width: 100%;
@@ -497,28 +492,53 @@ h3 {
 }
 
 .resultContainer {
-  margin: 50px auto;
-  border: 2px solid red;
+  margin: 10px auto;
   display: flex;
   justify-content: center;
+  width: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.labels, .information {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .labels {
-  border: 2px solid blue;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  text-align: right;
+  padding-right: 10px;
 }
 
 .information {
-  border: 2px solid green;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  text-align: left;
+  padding-left: 10px;
 }
 
+.recordDetails {
+  font-family: "AverageSans";
+}
+
+.noRecords {
+  font-family: "AverageSans";
+  padding: 25px 0;
+  font-size: 3rem;
+  animation: change 0.8s ease;
+  margin-right: 75px;
+}
+
+@keyframes change {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .accordion {
   border-bottom: 2px solid white;
 }

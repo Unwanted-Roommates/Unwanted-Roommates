@@ -2,7 +2,6 @@ const app = {};
 
 app.token = "ZLv4DuWOXJMDJjtoemNuEtwro"
 
-
 app.url = "https://data.cityofnewyork.us/resource/p937-wjvj.json"
 
 
@@ -13,31 +12,46 @@ app.getRecords = (house, street, borough)=> {
   url.search = new URLSearchParams({
     "$$app_token": app.token,
     "$limit": 5,
+    "$order": "inspection_date DESC",
     "house_number": house,
     "street_name": street,
-    "borough": borough
+    "borough": borough,
+    
   });
 
   fetch(url).then((rodent) =>{
-
+    
     if (rodent.ok) {
       return rodent.json();
     } else {
+
       throw new Error("There was an unexpected problem with the API. Please try again later.")
     }
   })
-  .then((jsonData) =>{
-    // if (jsonData.length === 0) {
 
-    //   console.log("error")
-    // } else {
-    document.querySelector('.inspectionResults').innerHTML = '';
+  .then((jsonData) =>{
+    
+    if (jsonData.length === 0) {
+
+      const noResults = document.createElement("div");
+      noResults.classList.add("noRecords");
+      noResults.innerHTML =
+        `<p class="noRecords"> No records found. You're probably safe.</p>`
+
+      const append = () => document.querySelector(".inspectionResults").append(noResults);
+
+      setTimeout(() => {
+        append();
+      }, 100);
+
+    } else {
+ 
     app.displayResults(jsonData);
-    // }
+    }
   })
-  // .catch((error)=> {
-  // console.log("error")
-  // });
+  .catch((error)=> {
+    console.log("Error")
+  });
 };
 
 app.displayResults = (arrayOfObjects) => {
@@ -53,18 +67,23 @@ app.displayResults = (arrayOfObjects) => {
     const resultContainer = document.createElement("div");
     resultContainer.classList.add('resultContainer');
     
-    const innerHTML = `
+   
+    const record = document.createElement("div");
+    record.classList.add('record');
+    record.innerHTML = `
     <div class = "labels">
-    <p class = "recordDetails"> ADDRESS:</p>
-    <p class = "recordDetails"> BOROUGH:</p>
-    <p class = "recordDetails"> ZIP CODE:</p>
-    <p class = "recordDetails"> INSPECTION DATE:</p>
-    <p class = "recordDetails"> INSPECTION TYPE:</p>
-    <p class = "recordDetails"> RESULT:</p>
-    
+      <p class = "recordDetails"> ADDRESS:</p>
+      <p class = "recordDetails"> BOROUGH:</p>
+      <p class = "recordDetails"> ZIP CODE:</p>
+      <p class = "recordDetails"> INSPECTION DATE:</p>
+      <p class = "recordDetails"> INSPECTION TYPE:</p>
+      <p class = "recordDetails"> RESULT:</p>
     </div>
-  `
-    const innerHTML2 = `
+    `
+
+    const details = document.createElement("div");
+    details.classList.add("details");
+    details.innerHTML = `
     <div class ="information">
       <p class = "recordDetails"> ${number} ${address}</p>
       <p class = "recordDetails"> ${borough}</p>
@@ -72,20 +91,15 @@ app.displayResults = (arrayOfObjects) => {
       <p class = "recordDetails"> ${date}</p>
       <p class = "recordDetails"> ${initial}</p>
       <p class = "recordDetails"> ${iResult}</p>
-    </div>
-  `
-    const record = document.createElement("div");
-    record.classList.add('record');
-    record.innerHTML = `${innerHTML}`
-
-    const details = document.createElement("div");
-    details.classList.add("details");
-    details.innerHTML = `${innerHTML2}`
+    </div>`
     
     resultContainer.append(record, details); 
 
+    const append = () => document.querySelector('.inspectionResults').append(resultContainer); 
 
-    document.querySelector('.inspectionResults').append(resultContainer); 
+    setTimeout(() => {
+      append();
+    }, 100);
   })
 }
 
@@ -95,7 +109,7 @@ app.events = () => {
   document.querySelector("form").addEventListener('submit', function(event){
     event.preventDefault();
 
-    // document.querySelector(".resultsContainer").classList.remove();
+  document.querySelector(".inspectionResults").replaceChildren();
 
     const house =  document.querySelector("#houseNumber").value;
     const street = document.querySelector("#streetName").value.toUpperCase();
@@ -124,7 +138,6 @@ app.events = () => {
 
 
 app.init = () => {
-  app.getRecords();
   app.events();
 };
 
