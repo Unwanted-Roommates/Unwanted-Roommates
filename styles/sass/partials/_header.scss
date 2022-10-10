@@ -1,5 +1,7 @@
 @use "./variables" as *;
 
+//HEADER
+
 header {
   height: 600px; 
   width: 100%;
@@ -68,6 +70,9 @@ h1 {
   text-shadow: -1px -1px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000;
   margin-bottom: 50px;
 }
+
+
+//SEARCH SECTION
 
 input {
   height: 7.3rem;

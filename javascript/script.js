@@ -1,12 +1,11 @@
 const app = {};
 
 app.token = "ZLv4DuWOXJMDJjtoemNuEtwro"
-
 app.url = "https://data.cityofnewyork.us/resource/p937-wjvj.json"
 
 
 app.getRecords = (house, street, borough)=> {
-  
+
   const url = new URL (app.url);
  
   url.search = new URLSearchParams({
@@ -16,7 +15,6 @@ app.getRecords = (house, street, borough)=> {
     "house_number": house,
     "street_name": street,
     "borough": borough,
-    
   });
 
   fetch(url).then((rodent) =>{
@@ -24,11 +22,9 @@ app.getRecords = (house, street, borough)=> {
     if (rodent.ok) {
       return rodent.json();
     } else {
-
       throw new Error("There was an unexpected problem with the API. Please try again later.")
     }
   })
-
   .then((jsonData) =>{
     
     if (jsonData.length === 0) {
@@ -36,7 +32,7 @@ app.getRecords = (house, street, borough)=> {
       const noResults = document.createElement("div");
       noResults.classList.add("noRecords");
       noResults.innerHTML =
-        `<p class="noRecords"> No records found. You're probably safe.</p>`
+      `<p class="noRecords"> No records found. You're probably safe.</p>`
 
       const append = () => {
         document.querySelector(".inspectionResults").append(noResults);
@@ -47,12 +43,14 @@ app.getRecords = (house, street, borough)=> {
       }, 100);
 
     } else {
- 
+
     app.displayResults(jsonData);
     }
   })
   .catch((error)=> {
-    console.log("Error")
+    noResults.classList.add("noRecords");
+      noResults.innerHTML =
+      `<p class="noRecords"> Sorry there was a problem with your request. Please try again later</p>`
   });
 };
 
@@ -97,7 +95,7 @@ app.displayResults = (arrayOfObjects) => {
       resultContainer.append(record, details); 
   
     const append = () => {
-      document.querySelector('.inspectionResults').append(resultContainer); 
+      document.querySelector('.inspectionResults').append(resultContainer); //for some reason the last li appended is offset in alignment  
     }
 
     setTimeout(() => {
@@ -108,7 +106,6 @@ app.displayResults = (arrayOfObjects) => {
 
 app.events = () => { 
 
-//FORM 
   document.querySelector("form").addEventListener('submit', function(event){
     event.preventDefault();
 

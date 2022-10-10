@@ -20,8 +20,8 @@
           </h1>
         </div>
 
+<!--SEARCH FORM -->
         <form action="#" method="post" name="addressSearch">
-                
           <div class="inputBar">
 
             <div class="addressEntry">
@@ -29,11 +29,10 @@
                 <span class="sr-only">Enter street number</span>
               </label>
               <input type="text" id="houseNumber" name="addressSearch" placeholder="#" required>
-
               <label for="street">
                 <span class="sr-only">Enter street name (i.e. 20 Locust Street, Brooklyn)</span>
               </label>  
-              <input type="text" id="streetName" name="addressSearch" placeholder="Street (i.e. Locust Street)" required>
+              <input type="text" id="streetName" name="addressSearch" placeholder="Street (i.e. 20 Locust Street)" required>
             </div><!--address entry div end-->
 
             <label for="selectBorough">
@@ -48,37 +47,35 @@
                 <option value="Staten Island">Staten Island</option>
               </select>
               
-              <button class="submit" type="submit" value="submit">
-                <img src="./assets/image 1.png" alt="#" aria-hidden="true">
-                <span class="sr-only">search</span>        
-                <p class="search">search</p> 
-              </button>
-          </div>
+            <button class="submit" type="submit" value="submit">
+              <img src="./assets/image 1.png" alt="#" aria-hidden="true">
+              <span class="sr-only">search</span>        
+              <p class="search">search</p> 
+            </button>
+          </div><!--input bar div end-->
         </form>
 
         <div class="explained">
           <div class="wrapper">
             <p class="aboutApp">Simply enter the property number, street name and borough of an address in the input fields above to see the latest rat inspection results for that property, if available.</p>
           </div>
-        </div>
+        </div><!--explained div ending-->
       </div><!-- headerElementsContainer div end -->
     </div> <!-- header div wrapper end -->
   </header>
 
   <main>
-    <section class="about">
-      <div class="wrapper">
-       
-      </div>
-    </section>
     <section class="results">
       <div class="wrapper">
+        
+<!--INSPECTION RESULTS-->
           <div class="inspectionResults">
            <!--dynamic results here-->
           </div>
       </div><!-- results wrapper div end -->
     </section>  
 
+<!--CAROUSEL -->
     <section class="carousel">
       <div class="wrapper">
         <div class="carousel">
@@ -105,7 +102,6 @@
               <li class="carouselSlide">
                   <img src="/assets/rat3.jpg" alt="A rat amongst debris">
                   <p class="ratFacts">Most New York rats weigh between 1-2 pounds and are between 16 to 20 inches in length. Though some have grown up to three feet in length. </p>
-                
               </li>
             </ul>
           </div>
@@ -114,9 +110,11 @@
             <button class="carouselIndicator"></button>
             <button class="carouselIndicator"></button>
           </div>
-        </div>
-      </div>
+        </div><!--carousel div end-->
+      </div><!--wrapper div end-->
     </section>
+
+<!--FAQ ACCORDION-->
     <section class="extraInfo">
       <div class="wrapper">
         <h2>FAQS</h2>
@@ -185,7 +183,7 @@
               </div>
               <div class="accordionItemBody">
                 <div class="accordionContent">
-                  <p>Check out the <a href="https://www1.nyc.gov/assets/doh/downloads/pdf/about/healthcode/health-code-article151.pdf" target="_blank">ASPCA's New York City branch</a> to find a feline friend that will take care of your mouse problem!</p>
+                  <p>Check out the <a href="https://www.aspca.org/nyc" target="_blank">ASPCA's New York City branch</a> to find a feline friend that will take care of your mouse problem!</p>
                 </div><!--accordionContent div end -->
               </div> <!--accordionitembody div end-->
             </div><!--accordionItem div end-->
