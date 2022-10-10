@@ -5,11 +5,15 @@ footer {
 }
 
 .footerText {
+  padding: 20px 0;
+}
+
+.junoLink, .footerText {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
   font-family: $bodyText;
   font-size: 2rem !important; //SASS would not allow changing of this property otherwise 
   text-align: center; 
   color: #000000;
 }
+
